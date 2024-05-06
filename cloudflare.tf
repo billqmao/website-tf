@@ -15,5 +15,5 @@ resource "cloudflare_pages_domain" "site_domain" {
   account_id   = var.account_id
   project_name = var.site_name
   domain       = var.domain
-  count = "${var.domain == "" ? 1 : 0}"
+  count = "${var.domain == "" ? 0 : 1}"
 }
