@@ -1,9 +1,9 @@
 terraform {
-  #Remote backend is disabled temporarily for bootstrap
-  #backend "gcs" {
-  #  bucket = var.tfstate_bucket
-  #  prefix = "terraform/state"
-  #}
+  #Disable this if you need to bootstrap this terraform
+  backend "gcs" {
+    bucket = var.tfstate_bucket
+    prefix = "terraform/state"
+  }
 
   required_providers {
     google = {
