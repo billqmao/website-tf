@@ -2,7 +2,7 @@
 resource "cloudflare_pages_project" "website" {
   account_id        = var.account_id
   name              = var.site_name
-  production_branch = "main"
+  production_branch = "master"
   build_config {
     build_command   = "hugo"
     destination_dir = "public"
