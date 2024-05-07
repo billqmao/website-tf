@@ -21,6 +21,19 @@ resource "cloudflare_pages_project" "website" {
     }
   }
 
+  deployment_configs {
+    preview {
+      environment_variables = {
+        HUGO_VERSION = "0.125.6"
+      }
+    }
+    production {
+      environment_variables = {
+        HUGO_VERSION = "0.125.6"
+      }
+    }
+
+  }
 }
 
 #Custom domain
