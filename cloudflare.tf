@@ -44,3 +44,12 @@ resource "cloudflare_pages_domain" "site_domain" {
   count        = var.domain == "" ? 0 : 1
 }
 
+resource "cloudflare_record" "cname_pages" {
+  zone_id = var.cloudflare_zone_id
+  name    = "@"
+  value   = "${var.site_name}.pages.dev"
+  type    = "CNAME"
+  ttl     = 3600
+  count   = var.domain == "" ? 0 : 1
+}
+
