@@ -49,7 +49,8 @@ resource "cloudflare_record" "cname_pages" {
   name    = "@"
   value   = "${var.site_name}.pages.dev"
   type    = "CNAME"
-  ttl     = 3600
+  ttl     = 1
+  proxied = true
   count   = var.domain == "" ? 0 : 1
 }
 
